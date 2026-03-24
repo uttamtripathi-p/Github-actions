@@ -12,7 +12,8 @@ jobs:
       - name: to print hello
         run: |
           echo "Hello from github actions"
-          echo "$(date +'%Y-%m-%d')"
+          echo "$(date)"
+          echo "Branch name: ${{ github.ref_name }}"
           
 
           
