@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
-     name: to print hello
+        name: to print hello
         run: |
           echo "Hello from github actions"
           echo "$(date)"
