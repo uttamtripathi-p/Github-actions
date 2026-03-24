@@ -12,6 +12,7 @@ jobs:
       - name: to print hello
         run: |
           echo "Hello from github actions"
+          echo "$(date +'%Y-%m-%d')"
           
 
           
