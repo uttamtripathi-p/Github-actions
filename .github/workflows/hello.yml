@@ -14,6 +14,12 @@ jobs:
           echo "Hello from github actions"
           echo "$(date)"
           echo "Branch name: ${{ github.ref_name }}"
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: List files
+        run: ls .
+      - name: printing operating system
+        run: hostnamectl
           
 
           
