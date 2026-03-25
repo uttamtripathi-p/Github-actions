@@ -10,7 +10,7 @@ on:
         options:
           - staging
           - production
-
+    
 jobs:
   deploy:
     runs-on: ubuntu-latest
