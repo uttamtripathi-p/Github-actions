@@ -9,7 +9,7 @@ on:
 
 jobs:
   pr_check:
-    runs on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: pr check running
         run: |
