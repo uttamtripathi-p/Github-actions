@@ -31,5 +31,5 @@ jobs:
             - name: os name, runner's hostname and current user
               run: |
                 echo "os name: ${{ runner.os }}"
-                echo "runner hostname: $(runner.hostname)"
+                echo "runner hostname: $(hostname)"
                 echo "current user: $(whoami)"
