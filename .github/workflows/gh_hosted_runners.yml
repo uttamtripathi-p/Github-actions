@@ -12,6 +12,10 @@ jobs:
                 echo "os name: ${{ runner.os }}"
                 echo "runner hostname: $(hostname)"
                 echo "current user: $(whoami)"
+                docker version
+                python --version
+                node --version
+                git --version
 
             
 
