@@ -13,4 +13,5 @@ jobs:
                 echo "runner hostname: $(hostname)"
                 echo "current user: $(whoami)"
                 touch self-hosted-runner.txt
+                pwd
                 
