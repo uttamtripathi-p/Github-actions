@@ -1,0 +1,37 @@
+name: github-hosted runners
+on:
+    push:
+        branches: [main]
+
+jobs:
+    linux:
+        runs-on: ubuntu-latest
+        steps:
+            - name: os name
+                run: echo "os name: ${{ runner.os }}"
+            - name: runners hostname
+                run: echo "runner hostname: ${{ runner.hostname }}"
+            - name: current user
+                run: echo "current user: ${{ runner.user }}"
+
+                
+    windows:
+        runs-on: windows-latest
+        steps:
+            - name: os name
+                run: echo "os name: ${{ runner.os }}"
+            - name: runners hostname
+                run: echo "runner hostname: ${{ runner.hostname }}"
+            - name: current user
+                run: echo "current user: ${{ runner.user }}"
+
+
+    macos:
+        runs-on: macos-latest
+        steps:
+            - name: os name
+                run: echo "os name: ${{ runner.os }}"
+            - name: runners hostname
+                run: echo "runner hostname: ${{ runner.hostname }}"
+            - name: current user
+                run: echo "current user: ${{ runner.user }}"
