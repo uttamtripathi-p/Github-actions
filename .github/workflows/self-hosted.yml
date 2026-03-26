@@ -1,0 +1,16 @@
+name: self-hosted
+on:
+    push:
+        branches: [main]
+
+jobs:
+    self-hosted:
+        runs-on: self-hosted
+        steps:
+            - name: os name, runner's hostname and current user
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: $(hostname)"
+                echo "current user: $(whoami)"
+                touch self-hosted-runner.txt
+                
