@@ -6,7 +6,6 @@ on:
 jobs:
     self-hosted:
         runs-on: self-hosted
-        label: [self-hosted, my-linux-runner]
         steps:
             - name: os name, runner's hostname and current user
               run: |
