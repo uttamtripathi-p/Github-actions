@@ -8,10 +8,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: os name, runner's hostname and current user
-                run: |
-                     echo "os name: ${{ runner.os }}"
-                     echo "runner hostname: ${{ runner.hostname }}"
-                     echo "current user: ${{ runner.user }}"
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: ${{ runner.hostname }}"
+                echo "current user: ${{ runner.user }}"
 
             
 
@@ -19,17 +19,17 @@ jobs:
         runs-on: windows-latest
         steps:
             - name: os name, runner's hostname and current user
-                run: |
-                     echo "os name: ${{ runner.os }}"
-                     echo "runner hostname: ${{ runner.hostname }}"
-                     echo "current user: ${{ runner.user }}"
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: ${{ runner.hostname }}"
+                echo "current user: ${{ runner.user }}"
 
 
     macos:
         runs-on: macos-latest
         steps:
             - name: os name, runner's hostname and current user
-                run: |
-                     echo "os name: ${{ runner.os }}"
-                     echo "runner hostname: ${{ runner.hostname }}"
-                     echo "current user: ${{ runner.user }}"
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: ${{ runner.hostname }}"
+                echo "current user: ${{ runner.user }}"
