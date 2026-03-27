@@ -14,9 +14,9 @@ jobs:
             - name: test
               run: echo "Running tests"
 
-deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-        - name: deploy
-          run: echo "Deploying"
+    deploy:
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+            - name: deploy
+              run: echo "Deploying"
