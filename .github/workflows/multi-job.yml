@@ -28,7 +28,7 @@ jobs:
             - name: Run a specific script only on main branch
               if: github.ref == 'refs/heads/main'
               run: |
-                echo "Running additional tests for main branch"
+                echo "Runningg additional tests for main branch"
     deploy:
         runs-on: ubuntu-latest
         needs: test
