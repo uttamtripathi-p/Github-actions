@@ -38,6 +38,6 @@ jobs:
         steps:
             - name: set output
               id: set_output
-              run: echo "$(date)" >> $GITHUB_OUTPUT
+              run: echo "date=$(date)" >> $GITHUB_OUTPUT
             - name: read output
               run: echo "The current date is ${{ steps.set_output.outputs.date}}"
