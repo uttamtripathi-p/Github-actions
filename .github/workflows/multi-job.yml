@@ -33,3 +33,11 @@ jobs:
         steps:
             - name: deploy
               run: echo "Deploying"
+    outputs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: set output
+              id: set_output
+              run: echo "$(date)" >> $GITHUB_OUTPUT
+            - name: read output
+              run: echo "The current date is ${{ steps.set_output.outputs.date}}"
