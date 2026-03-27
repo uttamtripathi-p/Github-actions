@@ -25,6 +25,8 @@ jobs:
         steps:
             - name: test
               run: echo "Running tests"
+              needs: 
+                branches: [main]
 
     deploy:
         runs-on: ubuntu-latest
