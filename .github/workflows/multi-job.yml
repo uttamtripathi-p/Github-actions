@@ -9,7 +9,7 @@ jobs:
               run: echo "Building the app"
     test:
         runs-on: ubuntu-latest
-        depends-on: build
+        needs: build
         steps:
             - name: test
               run: echo "Running tests"
