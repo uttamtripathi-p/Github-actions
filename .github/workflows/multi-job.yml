@@ -1,7 +1,5 @@
 name: multi-job
-on:
-    push:
-        branches: [main]    
+on: workflow_dispatch    
 env: 
     APP_NAME: myapp
 jobs:
