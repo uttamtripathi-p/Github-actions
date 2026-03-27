@@ -1,8 +1,5 @@
 name: matrix build
-on:
-  push:
-    branches: [main]
-
+on: workflow_dispatch
 jobs:
   py_matrix:
     runs-on: ${{ matrix.os }}
