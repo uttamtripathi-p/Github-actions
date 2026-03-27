@@ -1,0 +1,37 @@
+name: github-hosted runners
+on: workflow_dispatch
+
+jobs:
+    linux:
+        runs-on: ubuntu-latest
+        steps:
+            - name: os name, runner's hostname and current user
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: $(hostname)"
+                echo "current user: $(whoami)"
+                docker version
+                python --version
+                node --version
+                git --version
+
+            
+
+    windows:
+        runs-on: windows-latest
+        steps:
+            - name: os name, runner's hostname and current user
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: $(hostname)"
+                echo "current user: $(whoami)"
+
+
+    macos:
+        runs-on: macos-latest
+        steps:
+            - name: os name, runner's hostname and current user
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: $(hostname)"
+                echo "current user: $(whoami)"

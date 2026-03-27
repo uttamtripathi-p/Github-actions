@@ -1,0 +1,16 @@
+name: self-hosted
+on: workflow_dispatch
+
+jobs:
+    self-hosted:
+        runs-on: [self-hosted, my-linux-runner]
+        steps:
+            - name: os name, runner's hostname and current user
+              run: |
+                echo "os name: ${{ runner.os }}"
+                echo "runner hostname: $(hostname)"
+                echo "current user: $(whoami)"
+                touch self-hosted-runner.txt
+                pwd
+                ls -al
+
