@@ -41,3 +41,10 @@ jobs:
               run: echo "date=$(date)" >> $GITHUB_OUTPUT
             - name: read output
               run: echo "The current date is ${{ steps.set_output.outputs.date}}"
+            - name: main step
+              id; main_step
+              run: echo "doing something"
+
+            - name: This runs only if previous step failed
+              if: failure()
+              run: echo "Previous step failed, nothing to do"
