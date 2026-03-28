@@ -10,7 +10,8 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v4
 
-      - name: running the code
+      - name: Running the code
         run: |
+          chmod +x ./disk_check.sh
           ./disk_check.sh
 
