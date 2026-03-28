@@ -48,3 +48,10 @@ jobs:
             - name: This runs only if previous step failed
               if: failure()
               run: echo "Previous step failed, nothing to do"
+            - name: This step gets ignored if it failed and other runs normally
+              continue-on-error: true
+              run: |
+                echo "This step might fail but it won't affect the rest of the workflow"
+            - name: This step only runs on push events not on pull request
+              if: github.event_name == 'push'
+              run: echo "This runs only on push events"
