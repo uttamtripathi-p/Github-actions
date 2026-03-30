@@ -17,11 +17,12 @@ on:
     outputs:
       VERSION:
         description: "output"
-        value: ${{ jobs.job-id.outputs.name }}
+        value: ${{ jobs.reusable.outputs.name }}
 
 jobs:
   reusable:
     runs-on: ubuntu-latest
+    outputs:
       VERSION: ${{ steps.version.outputs.VERSION }}
     steps:
       - name: code checkout
