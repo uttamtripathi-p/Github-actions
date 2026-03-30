@@ -17,7 +17,7 @@ on:
     outputs:
       VERSION:
         description: "output"
-        value: ${{ jobs.reusable.outputs.name }}
+        value: ${{ jobs.reusable.outputs.VERSION }}
 
 jobs:
   reusable:
