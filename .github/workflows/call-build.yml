@@ -14,6 +14,9 @@ jobs:
   test:
     needs: build
     uses: ./.github/workflows/resuable-build.yml
+    with:
+      app_name: "my-webapp"
+      environment: "production"
     steps:
       - name: printing build_version output
         run: echo ${{ needs.build.outputs.VERSION }}
