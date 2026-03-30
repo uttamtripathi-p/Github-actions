@@ -24,6 +24,6 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ github.repository }}/auto_build_push:latest
-            ${{ github.repository }}/auto_build_push:${{ github.sha }}
+            uttamtripathi/auto_build_push:latest
+            uttamtripathi/auto_build_push:${{ github.sha }}
 
