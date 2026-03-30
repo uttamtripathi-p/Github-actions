@@ -15,13 +15,14 @@ on:
       docker_token:
         required: true
     outputs:
-      name:
+      VERSION:
         description: "output"
         value: ${{ jobs.job-id.outputs.name }}
 
 jobs:
   reusable:
     runs-on: ubuntu-latest
+      VERSION: ${{ steps.version.outputs.VERSION }}
     steps:
       - name: code checkout
         uses: actions/checkout@v4
@@ -30,5 +31,6 @@ jobs:
           echo "building ${{ inputs.app_name }} for ${{ inputs.environment }}"
           echo "docker_token is set: ${{ secrets.docker_token != ''}}"
       - name: Generate version
+        id: version
         run: echo "VERSION=v1.0-$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
 
