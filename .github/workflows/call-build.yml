@@ -17,4 +17,5 @@ jobs:
     with:
       app_name: "my-webapp"
       environment: "production"
-    outputs: ${{ needs.build.outputs.VERSION }}
+    outputs:
+      value: ${{ needs.build.outputs.VERSION }}
