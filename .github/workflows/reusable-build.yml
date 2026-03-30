@@ -14,6 +14,10 @@ on:
     secrets:
       docker_token:
         required: true
+    outputs:
+      name:
+        description: "output"
+        value: ${{ jobs.job-id.outputs.name }}
 
 jobs:
   reusable:
@@ -25,5 +29,6 @@ jobs:
         run: |
           echo "building ${{ inputs.app_name }} for ${{ inputs.environment }}"
           echo "docker_token is set: ${{ secrets.docker_token != ''}}"
-
+      - name: Generate version
+        run: echo "VERSION=v1.0-$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
 
