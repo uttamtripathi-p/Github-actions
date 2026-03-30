@@ -11,9 +11,9 @@ on:
          required: true
          default: "staging"
          type: string
-      secrets:
-        docker_token:
-          required: true
+    secrets:
+      docker_token:
+        required: true
 
 jobs:
   reusable:
@@ -24,6 +24,6 @@ jobs:
       - name: building app
         run: |
           echo "building ${{ inputs.app_name }} for ${{ inputs.environment }}"
-          echo "docker_token is set: ${{ inputs.docker_token != ''}}"
+          echo "docker_token is set: ${{ secrets.docker_token != ''}}"
 
 
