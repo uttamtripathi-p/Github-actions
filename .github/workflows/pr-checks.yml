@@ -34,7 +34,7 @@ jobs:
           BRANCH: "${{ github.head_ref }}"
         run: |
 
-          if [[ "$BRANCH" != feature/* && \
+          if [[ "$BRANCH" != feat/* && \
                 "$BRANCH" != fix/* && \
                 "$BRANCH" != docs/* ]]; then
               echo "((FAILED)) '$BRANCH' does not match allowed patterns."
