@@ -1,0 +1,41 @@
+name: Pr validation workflow
+on:
+  pull_request:
+    branches: [main]
+
+
+jobs:
+  file-size-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: quick fail if file> 1mb
+        run: |
+          echo "Checking file sizes in PR"
+
+          for file in $(find . -type f);do
+            size=$(stat -c%s "$file")
+            if [ "$size" -gt 1048576 ]; then
+              echo "X $file is larger than 1MB"
+              exit 1
+            fi
+            done
+
+            echo "✅ All files are under 1mb"
+
+  branch-name-check:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: branch name check
+        run: echo "${{ github.head_ref }}"
+      - name: failing if branch i not in recognized pattern
+        run: |
+          branch_name=[ "feature/*", "fix/*", "docs/*" ]
+          if [ "${{ github.head_ref }}" != "$branch_name" ]; then
+          echo "((FAILED)) pattern not recognized"
+          exit 1
+          fi
+
+          echo "✅ branch pattern is verified"
+
