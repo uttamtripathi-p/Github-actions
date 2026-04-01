@@ -30,8 +30,9 @@ jobs:
       - name: branch name check
         run: echo "${{ github.head_ref }}"
       - name: failing if branch is not in recognized pattern
-        run: |
+        env:
           BRANCH="${{ github.head_ref }}
+        run: |
           if [[ "$BRANCH" != feature/* && \
                 "$BRANCH" != fix/* && \
                 "$BRANCH" != docs/* ]]; then
