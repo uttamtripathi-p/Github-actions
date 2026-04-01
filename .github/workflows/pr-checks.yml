@@ -31,7 +31,7 @@ jobs:
         run: echo "${{ github.head_ref }}"
       - name: failing if branch is not in recognized pattern
         env:
-          BRANCH="${{ github.head_ref }}
+          BRANCH: "${{ github.head_ref }}
         run: |
           if [[ "$BRANCH" != feature/* && \
                 "$BRANCH" != fix/* && \
