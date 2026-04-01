@@ -31,8 +31,8 @@ jobs:
         run: echo "${{ github.head_ref }}"
       - name: failing if branch i not in recognized pattern
         run: |
-          branch_name=[ "feature/*", "fix/*", "docs/*" ]
-          if [ "${{ github.head_ref }}" != "$branch_name" ]; then
+           "feature/*", "fix/*", "docs/*" 
+          if [ "${{ github.head_ref }}" != ["feature/*", "fix/*", "docs/*"]" ]; then
           echo "((FAILED)) pattern not recognized"
           exit 1
           fi
