@@ -37,7 +37,7 @@ jobs:
                 "$BRANCH" != fix/* && \
                 "$BRANCH" != docs/* ]]; then
               echo " ((FAILED)) '$BRANCH' does not match allowed patterns."
-              echo " Allowed: feature/*, fix/*, docs/*"
+              echo " Allowed= feature/*, fix/*, docs/*"
               exit 1
           fi
           echo "✅ branch pattern is verified"
