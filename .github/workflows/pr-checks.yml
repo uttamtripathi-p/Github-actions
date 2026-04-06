@@ -50,11 +50,10 @@ jobs:
     steps:
       - name: Reads the PR body
         run: |
-          echo "${{ github.event.pull_request.body }}" >> pr_check
-          if [ -s pr_check ]; then
-           cat pr_check
-          else
+          if [ -z "${{ github.event.pull_request.body }}" ]; then
            echo "The file is empty"
+          else
+           echo "${{ github.event.pull_request.body }}"
           fi
 
 
