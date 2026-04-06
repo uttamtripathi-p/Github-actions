@@ -1,0 +1,11 @@
+name: files to ignore
+on: 
+    push:
+        branches:
+            - main
+            - release/*
+
+        paths-ignore:
+     
+            - '*.md'
+            - 'docs/**'
