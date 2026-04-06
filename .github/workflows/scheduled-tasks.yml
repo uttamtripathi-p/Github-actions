@@ -13,7 +13,7 @@ jobs:
         run: echo "${{ github.event.schedule }}"
       - name: Health check
         run: |
-          response=$(curl -s -o /dev/null -w "%{http_code}" https://google.com
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://google.com )
           if [ "$response" -ne 200 ]; then
             echo "Health check failed! Response code: $response"
             exit 1
