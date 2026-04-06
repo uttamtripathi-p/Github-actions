@@ -9,6 +9,9 @@ on:
      
             - '*.md'
             - 'docs/**'
-obs:
+jobs:
     path_to_ignore:
         runs-on: ubuntu-latest
+        steps:
+            - name: branch where workflow is
+              run: echo "${{ github.ref_name }}"

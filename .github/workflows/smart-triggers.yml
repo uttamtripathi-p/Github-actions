@@ -10,4 +10,6 @@ on:
 jobs:
     path_to_trigger:
         runs-on: ubuntu-latest
-        
+        steps:
+            - name: branch where workflow is
+              run: echo "${{ github.ref_name }}"
