@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: schedule trigger used
-        run: echo "${{ github.event.schedule }}"
+        run: |
+           if [ -z "${{ github.event.schedule }}" ]; then
+             echo "Triggered manually via workflow_dispatch"
+            else
+              echo "Triggered by cron: ${{ github.event.schedule }}"
+           fi
       - name: Health check
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" -L https://google.com )
