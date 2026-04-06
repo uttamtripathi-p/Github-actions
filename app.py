@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return jsonify({
-        "message": "System Stats API is running",
+        "message": "System   Stats API is running",
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     })
 
