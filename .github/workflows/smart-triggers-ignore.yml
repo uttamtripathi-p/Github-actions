@@ -9,3 +9,6 @@ on:
      
             - '*.md'
             - 'docs/**'
+obs:
+    path_to_ignore:
+        runs-on: ubuntu-latest

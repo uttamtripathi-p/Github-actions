@@ -7,7 +7,7 @@ on:
         paths:
             - 'src/**'
             - 'app/**'
-        paths-ignore:
-     
-            - '*.md'
-            - 'docs/**'
+jobs:
+    path_to_trigger:
+        runs-on: ubuntu-latest
+        
