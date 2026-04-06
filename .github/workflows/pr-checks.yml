@@ -34,7 +34,7 @@ jobs:
           BRANCH: "${{ github.head_ref }}"
         run: |
 
-          if [[ "$BRANCH" != feat/* && \
+          if [[ "$BRANCH" != feature/* && \
                 "$BRANCH" != fix/* && \
                 "$BRANCH" != docs/* ]]; then
               echo "((FAILED)) '$BRANCH' does not match allowed patterns."
@@ -43,4 +43,18 @@ jobs:
           fi
 
           echo "✅ branch pattern is verified"
+
+
+  pr-body-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reads the PR body
+        run: |
+          echo "${{ github.event.pull_request.body }}" >> pr_check
+          if [ -f pr-check != 0 ]; then
+           cat pr_check
+          else
+           echo "The file is empty"
+          fi
+
 
