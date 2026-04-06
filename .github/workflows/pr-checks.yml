@@ -51,6 +51,7 @@ jobs:
       - name: Reads the PR body
         run: |
           if [ -z "${{ github.event.pull_request.body }}" ]; then
+           echo "<<<WARNING>>>" 
            echo "The file is empty"
           else
            echo "${{ github.event.pull_request.body }}"
