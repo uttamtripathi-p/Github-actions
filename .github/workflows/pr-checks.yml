@@ -22,7 +22,7 @@ jobs:
             fi
             done
 
-            echo "✅ All files are under 1mb"
+            echo "✅ All files are less than 1mb"
 
   branch-name-check:
     runs-on: ubuntu-latest
