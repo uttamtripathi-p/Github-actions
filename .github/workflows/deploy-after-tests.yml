@@ -1,9 +1,8 @@
 name: deploy
-
-    on:
-        workflow_run:
-            workflows: ["Run Tests"]
-            types: [completed]
+on:
+    workflow_run:
+        workflows: ["Run Tests"]
+        types: [completed]
 
 jobs:
     condition:
