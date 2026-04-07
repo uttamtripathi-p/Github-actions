@@ -8,4 +8,5 @@ jobs:
     condition:
         if: ${{ github.event.workflow_run.conclusion == 'success' }}
         steps:
-            - name: echo "This message is printed when workflow is triggered after successfull completion of another workflow"
+            - name: deploy-tests 
+              run: echo "This message is printed when workflow is triggered after successfull completion of another workflow"
