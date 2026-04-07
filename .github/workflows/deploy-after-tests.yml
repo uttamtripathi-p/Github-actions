@@ -1,7 +1,9 @@
-on:
-    workflow_run:
-        workflows: ["Run Tests"]
-        types: [completed]
+name: deploy
+
+    on:
+        workflow_run:
+            workflows: ["Run Tests"]
+            types: [completed]
 
 jobs:
     condition:
